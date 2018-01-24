@@ -15,5 +15,6 @@ class ContactsController < ApplicationController
    def contact_params
      params.require(:contact).permit(:name, :email, :comments)
    end
+   # This is a security feature to whitelist the three attributes in a mass assignment approach.
  
 end
