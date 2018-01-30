@@ -10,9 +10,11 @@ class ContactsController < ApplicationController
      redirect_to new_contact_path
    else
      flash[:danger] = @contact.errors.full_messages.join(", ")
+     # This is taking the contact object and using the errors function available when an error occurs.
      redirect_to new_contact_path
    end
  end
+ 
  private
    def contact_params
      params.require(:contact).permit(:name, :email, :comments)

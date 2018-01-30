@@ -34,10 +34,14 @@
     </nav>
     
     <div class="container">
+      <!-- A loop for each flash that creates a div with the msg and the bootstrap class type interpolated -->
+      <!-- Key | Value // type | msg  -->
+      <!-- E.g  flash[:success] = "Message sent." -->
       <% flash.each do |type, msg| %>
         <%= content_tag :div, msg, class: "alert alert-#{type}" %>
       <% end %>
     </div>
+    
     <%= yield %>
 
   </body>
